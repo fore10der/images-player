@@ -1,15 +1,3 @@
-export class Counter {
-   #value: number = 0
+import Sequencer from "./Sequencer";
 
-    increase() {
-       this.#value++
-    }
-
-    decrease() {
-       this.#value--
-    }
-
-    getValue() {
-       return this.#value
-    }
-}
+export default Sequencer
