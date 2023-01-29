@@ -1,17 +1,14 @@
 import range from "./utils/range";
-import Sequencer from "@images-player/core";
+import { Preloader } from "@images-player/core";
 const body = document.querySelector("body")
 
 if (body) {
 
-    const images = range(4701, 76).map((value) => `/assets/pig/DSC0${value}.JPG`)
+    const images = range(1, 351).map((value) => `/assets/intro/intro_00${value.toString().padStart(3, '0')}.webp`)
 
+    const loadedArray: HTMLImageElement[] = []
 
-    const image = document.createElement('img')
+    Preloader(loadedArray, images)
 
-    const sequencer = new Sequencer(images, image)
-
-    body.append(image)
-
-    sequencer.load().then(() => console.log('loaded'))
+    console.log(loadedArray)
 }
